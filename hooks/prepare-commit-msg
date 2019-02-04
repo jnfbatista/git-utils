@@ -1,0 +1,6 @@
+#!/bin/sh
+
+CAPTURE=`git branch | sed -nE 's/\*.*\/.*\/(.*)\/(.*)$/\1: /p'`
+#ISSUE=`echo $CAPTURE | cut -d '#' -f1`
+#TITLE=`echo $CAPTURE | cut -d '#' -f2 | `
+echo "$CAPTURE\n$(cat $1)" > $1
